@@ -1,0 +1,56 @@
+.page-header {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  width: 100%;
+  &--full {
+    position: relative;
+    background-color: #283645;
+    padding-bottom: 0;
+  }
+  &__logo {
+    display: inline-block;
+    width: 74px;
+    height: 23px;
+    background-image: url("../../img/logo-mobile.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 21px 20px 20px 20px;
+    &:hover {
+      background-image: url("../../img/logo-mobile--hover.svg");
+    }
+    &:active {
+      background-image: url("../../img/logo-mobile.svg");
+      opacity: 0.3;
+    }
+  }
+}
+
+
+@media (min-width: $tablet-width) {
+  .page-header__logo {
+    width: 145px;
+    height: 40px;
+    background-image: url("../../img/logo-tablet.svg");
+    margin: 25px 39px 41px 39px;
+    &:hover {
+      background-image: url("../../img/logo-tablet--hover.svg");
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .page-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__logo {
+      width: 147px;
+      height: 40px;
+      margin: 27px 130px 43px 0;
+      background-image: url("../../img/logo-desktop.svg");
+      &:hover {
+        background-image: url("../../img/logo-desktop--hover.svg");
+      }
+    }
+  }
+}
