@@ -15,10 +15,51 @@
     font-size: 14px;
     line-height: 24px;
   }
+  & br {
+    display: none;
+  }
 }
 
 @media (min-width: $tablet-width) {
   .card {
     text-align: left;
+  }
+}
+@media (min-width: $desktop-width) {
+  .card {
+    width: 252px;
+    text-align: center;
+    margin-bottom: 0;
+    &__title {
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 30px;
+      margin-bottom: 32px;
+    }
+    &__text {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 30px;
+    }
+    & br {
+      display: inline;
+    }
+    &::before {
+      content: "";
+      display: block;
+      height: 301px;
+      width: 100;
+      background-repeat: no-repeat;
+      background-position-x: center;
+    }
+    &--mood::before {
+      background-image: url("../../img/card-item--1.png");
+    }
+    &--world::before {
+      background-image: url("../../img/card-item--2.png");
+    }
+    &--friends::before {
+      background-image: url("../../img/card-item--3.png");
+    }
   }
 }

@@ -68,3 +68,28 @@
     }
   }
 }
+
+@media (min-width: $desktop-width) {
+  .adjustment {
+    padding-bottom: 59px;
+    background-size: cover;
+    background-position-y: 342px;
+    &__wrapper {
+      max-width: 892px;
+      &::after {
+        display: none;
+      }
+      padding: 0;
+    }
+    &__title p {
+      font-weight: 300;
+      font-size: 50px;
+      line-height: 68px;
+    }
+    &__list {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+}
