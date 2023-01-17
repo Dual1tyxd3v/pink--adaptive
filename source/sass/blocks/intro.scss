@@ -29,8 +29,11 @@
 }
 
 @media (min-width: $tablet-width) {
+  .container {
+    max-width: 640px;
+    margin: 0 auto;
+  }
   .intro {
-    position: relative;
     padding: 214px 20px 120px 20px;
     &__title {
       font-size: 40px;
@@ -38,15 +41,16 @@
       line-height: 48px;
       font-weight: normal;
       margin-bottom: 39px;
+      position: relative;
       &::after {
         background-image: url("../img/phone-tablet.png");
         background-size: 660px 545px;
         background-position: right;
         height: 545px;
-        width: 100%;
+        width: 660px;
         position: absolute;
-        right: 0;
-        bottom: 0;
+        top:0;
+        left: 0;
       }
     }
     &__wrapper {
@@ -61,7 +65,7 @@
 
 @media (min-width: $desktop-width) {
   .container {
-    width: 940px;
+    max-width: 940px;
     margin: 0 auto;
   }
   .intro {
@@ -77,6 +81,7 @@
         background-size: 1050px 645px;
         height: 645px;
         width: 1050px;
+        top: 31px
       }
     }
   }
