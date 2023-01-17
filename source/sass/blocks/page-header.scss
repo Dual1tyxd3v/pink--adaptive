@@ -11,15 +11,15 @@
     display: inline-block;
     width: 74px;
     height: 23px;
-    background-image: url("../../img/logo-mobile.svg");
+    background-image: url("../img/logo-mobile.svg");
     background-position: center;
     background-repeat: no-repeat;
     margin: 21px 20px 20px 20px;
     &:hover {
-      background-image: url("../../img/logo-mobile--hover.svg");
+      background-image: url("../img/logo-mobile--hover.svg");
     }
     &:active {
-      background-image: url("../../img/logo-mobile.svg");
+      background-image: url("../img/logo-mobile.svg");
       opacity: 0.3;
     }
   }
@@ -27,13 +27,16 @@
 
 
 @media (min-width: $tablet-width) {
+  .page-header {
+    z-index: 3;
+  }
   .page-header__logo {
     width: 145px;
     height: 40px;
-    background-image: url("../../img/logo-tablet.svg");
+    background-image: url("../img/logo-tablet.svg");
     margin: 25px 39px 41px 39px;
     &:hover {
-      background-image: url("../../img/logo-tablet--hover.svg");
+      background-image: url("../img/logo-tablet--hover.svg");
     }
   }
 }
@@ -47,9 +50,9 @@
       width: 147px;
       height: 40px;
       margin: 27px 173px 43px 0;
-      background-image: url("../../img/logo-desktop.svg");
+      background-image: url("../img/logo-desktop.svg");
       &:hover {
-        background-image: url("../../img/logo-desktop--hover.svg");
+        background-image: url("../img/logo-desktop--hover.svg");
       }
     }
   }
