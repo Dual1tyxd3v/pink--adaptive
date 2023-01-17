@@ -1,0 +1,70 @@
+.adjustment {
+  padding-top: 38px;
+  background-image: url("../img/adjustment-back.svg");
+  background-size: 1172px 828px;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  &__wrapper {
+    padding: 0 20px;
+    &::after {
+      content: "";
+      display: block;
+      height: 277px;
+      width: 100%;
+      background-image: url("../img/card-item--mobile.png");
+      background-repeat: no-repeat;
+      background-position-x: center;
+    }
+  }
+  &__title {
+    margin-bottom: 110px;
+    & p {
+      font-size: 24px;
+      font-weight: 300;
+      line-height: 28px;
+      text-align: center;
+      margin-bottom: 22px;
+      &:nth-child(2) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .adjustment {
+    padding-top: 50px;
+    background-position-y: 240px;
+    &__title p{
+      font-weight: 300;
+      font-size: 40px;
+      line-height: 54px;
+      margin-bottom: 0;
+      & br {
+        display: none;
+      }
+      &:nth-child(2) br {
+        display: inline;
+      }
+    }
+    &__list {
+      width: 310px;
+      margin-left: auto;
+      margin-right: 0;
+      position: relative;
+    }
+    &__wrapper {
+      position: relative;
+      max-width: 660px;
+      margin: 0 auto;
+      &::after {
+        position: absolute;
+        height: 482px;
+        left: 20px;
+        top: 211px;
+        background-image: url("../../img/card-item--tablet.png");
+        background-position-x: left;
+      }
+    }
+  }
+}
