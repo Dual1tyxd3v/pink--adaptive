@@ -106,21 +106,31 @@
   <section class="reviews">
     <div class="reviews__wrapper">
       <div class="reviews__slider">
-        <div class="reviews__item">
+        <div class="reviews__item reviews__item--active" data-counter="1">
           <p class="reviews__text">«Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные
             серые
             вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!»</p>
-          <h3 class="reviews__name">Николай Петров</h3>
+          <h3 class="reviews__name">Василий Иванов</h3>
+          <p class="reviews__info">51 год, продавец</p>
+        </div>
+        <div class="reviews__item" data-counter="2">
+          <p class="reviews__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel qui ab aspernatur maxime, cum, odit sunt optio eligendi deserunt voluptate dignissimos quisquam quae molestiae quod sapiente ea consectetur cumque itaque.</p>
+          <h3 class="reviews__name">Геннадий Васильевич</h3>
           <p class="reviews__info">25 лет, водитель трамвая</p>
         </div>
+        <div class="reviews__item" data-counter="3">
+          <p class="reviews__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab non dolore libero accusamus veniam, minus, deleniti numquam aliquid facilis qui repellendus quidem. Ipsa, eligendi at. Ducimus nemo iste magni sunt.</p>
+          <h3 class="reviews__name">Николай Петров</h3>
+          <p class="reviews__info">34 года, страховой агент</p>
+        </div>
       </div>
-      <button class="reviews__button reviews__button--left" type="button">Влево</button>
-      <button class="reviews__button reviews__button--right" type="button">Вправо</button>
+      <button class="reviews__button reviews__button--left slider__arrow--left" type="button">Влево</button>
+      <button class="reviews__button reviews__button--right slider__arrow--right" type="button">Вправо</button>
     </div>
     <ul class="reviews__dots dots">
-      <li class="dots__item dots__item--active"></li>
-      <li class="dots__item"></li>
-      <li class="dots__item"></li>
+      <li class="dots__item dots__item--active" data-counter="1"></li>
+      <li class="dots__item" data-counter="2"></li>
+      <li class="dots__item" data-counter="3"></li>
     </ul>
   </section>
   <script src="js/script.js"></script>

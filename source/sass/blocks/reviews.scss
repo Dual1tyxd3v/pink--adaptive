@@ -1,7 +1,16 @@
 .reviews {
   padding: 50px 20px 57px 20px;
+  &__wrapper {
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+  }
   &__info {
     display: none;
+  }
+  &__slider {
+    display: flex;
+    transition: 1.5s all;
   }
   &__name {
     margin-bottom: 31px;
@@ -12,6 +21,7 @@
   }
   &__item {
     display: flex;
+    width: 100%;
     flex-direction: column;
     align-items: center;
     margin-bottom: 41px;
@@ -32,9 +42,7 @@
     padding-top: 110px;
     padding-bottom: 0;
     &__wrapper {
-      max-width: 620px;
-      margin: 0 auto;
-      position: relative;
+      width: 620px;
     }
     &__name {
       order: 0;
@@ -57,7 +65,7 @@
     }
     &__item {
       margin-bottom: 46px;
-      max-width: 620px;
+      width: 620px;
     }
   }
 }
@@ -66,10 +74,20 @@
   .reviews {
     padding-top: 72px;
     &__wrapper {
-      max-width: 940px;
+      width: 940px;
+      &::before {
+        content:"";
+        display: block;
+        width: 79px;
+        height: 63px;
+        background-image: url("../img/quotes.svg");
+        background-repeat: no-repeat;
+        margin: 0 auto 58px auto;
+      }
     }
     &__item {
-      max-width: 940px;
+      width: 940px;
+      margin-bottom: 0;
     }
     &__name {
       font-size: 24px;
@@ -83,6 +101,7 @@
     &__button {
       display: block;
       position: absolute;
+      cursor: pointer;
       z-index: 3;
       bottom: 151px;
       width: 22px;
