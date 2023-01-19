@@ -1,12 +1,17 @@
 const btnClose = document.querySelector('.main-nav__toggle');
 const header = document.querySelector('.page-header');
-const slider = document.querySelector('.reviews__slider');
+const reviewsSlider = document.querySelector('.reviews__slider');
+const priceSlider = document.querySelector('.price__slider');
 const wrapper = document.querySelector('.reviews__wrapper');
 const sliderLeftBtn = document.querySelector('.slider__arrow--left');
 const sliderRightBtn = document.querySelector('.slider__arrow--right');
 const reviews = document.querySelectorAll('.reviews__item');
+const priceSlides = document.querySelectorAll('.price-item[data-counter]');
 let reviewsOffset = document.querySelector('.reviews__wrapper').clientWidth;
 const reviewsDots = document.querySelector('.reviews__dots').querySelectorAll('.dots__item');
+const priceDots = document.querySelector('.price__dots').querySelectorAll('.dots__item');
+
+const TABLET_WIDTH = 660;
 
 // кнопка бургер
 btnClose.addEventListener('click', () => {
@@ -20,8 +25,15 @@ window.addEventListener('resize', () => {
   }
 
   reviewsOffset = document.querySelector('.reviews__wrapper').clientWidth;
-  slider.style.transform = `translateX(-${(currentReviewSlide.value.dataset.counter - 1) * reviewsOffset}px)`;
-  slider.style.width = `${reviewsOffset * reviews.length}px`;
+  reviewsSlider.style.transform = `translateX(-${(currentReviewSlide.value.dataset.counter - 1) * reviewsOffset}px)`;
+  reviewsSlider.style.width = `${reviewsOffset * reviews.length}px`;
+  if (document.documentElement.clientWidth < TABLET_WIDTH) {
+    priceSlider.style.width = `${reviewsOffset * priceSlides.length}px`;
+  } else {
+    clearInterval(priceSliderTimer);
+    priceSlider.style.width = `100%`;
+    priceSlider.style.transform = '0';
+  }
 });
 //
 // слайдер
@@ -41,8 +53,8 @@ function changeSlide(slider, offset, currentSlide, slides, direction, timer = nu
     nextSlideCounter = position - 1;
   }
 
-  currentSlide.value.classList.remove('reviews__item--active');
-  slides[nextSlideCounter].classList.add('reviews__item--active');
+  currentSlide.value.classList.remove('slide--active');
+  slides[nextSlideCounter].classList.add('slide--active');
   currentSlide.value = slides[nextSlideCounter];
 
   dots[counter].classList.remove('dots__item--active');
@@ -53,17 +65,34 @@ function changeSlide(slider, offset, currentSlide, slides, direction, timer = nu
 //
 // --слайдер ревью
 reviewsDots.forEach((dot) => {
-  dot.addEventListener('click', () => changeSlide(slider, reviewsOffset, currentReviewSlide, reviews, 0, reviewsSliderTimer, reviewsDots, dot.dataset.counter));
+  dot.addEventListener('click', () => changeSlide(reviewsSlider, reviewsOffset, currentReviewSlide, reviews, 0, reviewsSliderTimer, reviewsDots, dot.dataset.counter));
 });
-slider.style.width = `${reviewsOffset * reviews.length}px`;
+reviewsSlider.style.width = `${reviewsOffset * reviews.length}px`;
 const currentReviewSlide = {
-  value: document.querySelector('.reviews__item--active')
+  value: document.querySelector('.reviews__item')
 }
 
 const reviewsSliderTimer = setInterval(() => {
-  changeSlide(slider, reviewsOffset, currentReviewSlide, reviews, 1, null, reviewsDots);
+  changeSlide(reviewsSlider, reviewsOffset, currentReviewSlide, reviews, 1, null, reviewsDots);
 }, 3000);
 
-sliderLeftBtn.addEventListener('click', () => changeSlide(slider, reviewsOffset, currentReviewSlide, reviews, -1, reviewsSliderTimer, reviewsDots));
-sliderRightBtn.addEventListener('click', () => changeSlide(slider, reviewsOffset, currentReviewSlide, reviews, 1, reviewsSliderTimer, reviewsDots));
+sliderLeftBtn.addEventListener('click', () => changeSlide(reviewsSlider, reviewsOffset, currentReviewSlide, reviews, -1, reviewsSliderTimer, reviewsDots));
+sliderRightBtn.addEventListener('click', () => changeSlide(reviewsSlider, reviewsOffset, currentReviewSlide, reviews, 1, reviewsSliderTimer, reviewsDots));
+//
+// слайдер прайсов
+const currentPriceSlide = {
+  value: document.querySelector('.price__item[data-counter]')
+}
+
+let priceSliderTimer = null;
+if (document.documentElement.clientWidth < TABLET_WIDTH) {
+  priceSlider.style.width = `${reviewsOffset * priceSlides.length}px`;
+  priceSliderTimer = setInterval(() => {
+    changeSlide(priceSlider, reviewsOffset, currentPriceSlide, priceSlides, 1, null, priceDots);
+  }, 3000);
+}
+
+priceDots.forEach((dot) => {
+  dot.addEventListener('click', () => changeSlide(priceSlider, reviewsOffset, currentPriceSlide, priceSlides, 0, priceSliderTimer, priceDots, dot.dataset.counter));
+});
 //

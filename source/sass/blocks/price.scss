@@ -1,0 +1,31 @@
+.price {
+  padding: 100px 20px 46px 20px;
+  overflow: hidden;
+  background-image: url("../img/price-back--mobile.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  &__slider {
+    display: flex;
+    transition: 1.5s all;
+  }
+  &__wrapper {
+    margin-bottom: 42px;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .price {
+    padding-bottom: 70px;
+    &__slider {
+      width: 100%;
+      align-items: flex-end;
+    }
+    &__dots {
+      display: none;
+    }
+    &__wrapper {
+      margin-bottom: 0;
+    }
+  }
+}

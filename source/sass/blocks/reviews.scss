@@ -1,5 +1,5 @@
 .reviews {
-  padding: 50px 20px 57px 20px;
+  padding: 50px 20px 10px 20px;
   &__wrapper {
     margin: 0 auto;
     overflow: hidden;
@@ -31,6 +31,7 @@
     font-size: 14px;
     line-height: 30px;
     text-align: center;
+    color: #283645;
   }
   &__button {
     display: none;

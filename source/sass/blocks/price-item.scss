@@ -1,0 +1,119 @@
+.price-item {
+  width: 100%;
+  flex-direction: column;
+  border-left: 2px solid #E5E5E5;
+  &:last-child {
+    & .price-item__value {
+      border-right: 2px solid #e5e5e5;
+    }
+  }
+  &:first-child {
+    border: 2px solid #e5e5e5;
+    border-right: none;
+    border-bottom: none;
+  }
+  &:nth-child(2) {
+    border: none;
+    & .price-item__value {
+      border-left: 2px solid #e5e5e5;
+    }
+  }
+  &__header {
+    text-transform: uppercase;
+    padding-top: 15px;
+    padding-bottom: 32px;
+    text-align: center;
+    background-color: #283645;
+    color: #fff;
+    &--hit {
+      position: relative;
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 74px;
+        height: 74px;
+        background-image: url("../img/icon-hit.svg");
+        background-repeat: no-repeat;
+        background-size: 74px 74px;
+        top: 0;
+      }
+    }
+  }
+  &__value {
+    padding: 19px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E5E5E5;
+    background-color: #fff;
+  }
+  &__price {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 30px;
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 10px;
+  }
+  &__text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 30px;
+    color: #283645;
+    text-transform: uppercase;
+  }
+  &__icon {
+    font-size: 0;
+    background-repeat: no-repeat;
+    &--yes {
+      width: 31px;
+      height: 21px;
+      background-image: url("../../img/icon-yes.svg");
+    }
+    &--no {
+      width: 27px;
+      height: 27px;
+      background-image: url("../../img/icon-no.svg");
+    }
+  }
+  &--dt {
+    display: none;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .price-item {
+    &__value {
+      justify-content: center;
+      padding: 8px 15px 6px 15px;
+      justify-content: flex-start;
+    }
+    &__header {
+      padding-bottom: 12px;
+      &--hit::before {
+        width: 61px;
+        height: 61px;
+        background-size: 61px 61px;
+      }
+    }
+    &__text {
+      font-size: 0;
+    }
+    &--dt {
+      display: block;
+      & .price-item__text {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 30px;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
