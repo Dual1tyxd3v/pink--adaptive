@@ -26,6 +26,17 @@
     }
     &__wrapper {
       margin-bottom: 0;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .price {
+    padding-bottom: 98px;
+    &__wrapper {
+      max-width: 1400px;
     }
   }
 }
