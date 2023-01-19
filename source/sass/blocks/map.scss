@@ -1,0 +1,50 @@
+.map {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    height: 33px;
+    width: 100%;
+    background-image: url("../img/bg-map.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100% 33px;
+    z-index: 3;
+  }
+  &__container {
+    height: 200px;
+    background-image: url("../img/map-layer.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  &__google {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .map {
+    &::before {
+      height: 68px;
+      background-size: 100% 68px;
+    }
+    &__container {
+      height: 374px;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .map {
+    &::before {
+      height: 102px;
+      background-size: 100% 102px;
+    }
+    &__container {
+      height: 502px;
+    }
+  }
+}
