@@ -32,7 +32,7 @@ window.addEventListener('resize', () => {
   } else {
     clearInterval(priceSliderTimer);
     priceSlider.style.width = `100%`;
-    priceSlider.style.transform = '0';
+    priceSlider.style.transform = 'translateX(0)';
   }
 });
 //
