@@ -57,13 +57,13 @@
       background-position-x: center;
     }
     &--mood::before {
-      background-image: url("../../img/card-item--1.png");
+      background-image: url("../img/card-item--1.png");
     }
     &--world::before {
-      background-image: url("../../img/card-item--2.png");
+      background-image: url("../img/card-item--2.png");
     }
     &--friends::before {
-      background-image: url("../../img/card-item--3.png");
+      background-image: url("../img/card-item--3.png");
     }
   }
 }
