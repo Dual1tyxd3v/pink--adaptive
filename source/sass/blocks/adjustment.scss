@@ -5,6 +5,9 @@
   background-repeat: no-repeat;
   background-position: right bottom;
   overflow: hidden;
+  &__list {
+    margin-bottom: 42px;
+  }
   &__wrapper {
     padding: 0 20px;
     &::after {
