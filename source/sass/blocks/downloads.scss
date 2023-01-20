@@ -18,6 +18,13 @@
     line-height: 18px;
     color: #fff;
     margin-bottom: 38px;
+    &:hover {
+      color: $pink;
+      background-color: #fff;
+    }
+    &:active {
+      color: rgba($pink, 0.3);
+    }
   }
   &__item {
     display: block;

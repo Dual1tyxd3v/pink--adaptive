@@ -25,6 +25,12 @@
     height: 34px;
     background-image: url("../img/icon-htmlacademy.svg");
     background-repeat: no-repeat;
+    &:hover {
+      background-image: url("../img/icon-htmlacademy--hover.svg");
+    }
+    &:active {
+      opacity: 0.3;
+    }
   }
   &__copyright {
     display: flex;
